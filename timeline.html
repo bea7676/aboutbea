@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Achievements Timeline</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: row;
+            animation: panRight 30s linear infinite;
+            width: 100%;
+        }
+
+        .timeline {
+            min-width: 350px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .timeline h3, .timeline h4 {
+            color: #ffcc00;
+            font-size: 24px;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .timeline p {
+            font-size: 18px;
+            margin-top: 15px;
+            line-height: 1.5;
+            color: #ddd;
+        }
+
+        .section-header {
+            text-align: center;
+            font-size: 36px;
+            color: #ffcc00;
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .section-header:before {
+            content: '';
+            width: 60%;
+            height: 2px;
+            background-color: #ffcc00;
+            position: absolute;
+            bottom: -10px;
+            left: 20%;
+        }
+
+        @keyframes panRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .emoji {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="timeline-container">
+            <!-- DANCE TIMELINE -->
+            <div class="timeline">
+                <h3>Dance Achievements</h3>
+                <p><strong>Joined Ballet at The Ballet Music Company</strong> - Year: 2012</p>
+                <p><strong>Annual Concerts</strong> - Years: 2012 – 2017</p>
+                <h4>RAD Exam Results</h4>
+                <p>Grade 1 & 2: Distinction (2013-2014)</p>
+                <p>Grade 3: (2014-2015)</p>
+                <p>Grade 4 & 5: Merit (2015-2016)</p>
+                <p>Grade 6: (2016-2017)</p>
+                <p>Grade 7: (2017)</p>
+                <p>Grade 7 RAD Exam: Distinction (2019)</p>
+                <p>Grade 8 RAD Exam: Distinction (2020)</p>
+                <p>Grade Intermediate RAD Exam: Distinction (2021)</p>
+                <p>Grade Advance Foundation class (2022)</p>
+
+                <strong>Joined Modern Jazz at Dance Trilogy</strong> - Year: 2014
+                <h4>CSTD Exam Results</h4>
+                <p>Grade 1: Honours Plus (2016)</p>
+                <p>Grade 2: Honours Plus (2017)</p>
+                <p>Grade 3: Honours Plus (2018)</p>
+                <p>Grade 4: Honours Plus (2019)</p>
+                <p>Grade 5: Honours Plus (2020)</p>
+                <p>Grade 6: Honours Plus (2021)</p>
+                <p>Grade 7: Honours Plus (2022)</p>
+
+                <h4>Achievements</h4>
+                <p><strong>December 2017:</strong> Beatrice was selected as one of 21 members to dance and perform on the Disneyland Dance Magic Anaheim LA Tour.</p>
+                <p><strong>Achievements during the tour:</strong></p>
+                <ul>
+                    <li>Led the parade down Main Street in Disneyland, Los Angeles</li>
+                    <li>Performance at Universal Studio City Walk</li>
+                    <li>Performance at Hollywood Blvd</li>
+                    <li>Disneyland Workshop with the Disney Performing Arts Program</li>
+                    <li>Workshop with ALDC</li>
+                </ul>
+            </div>
+
+            <!-- CSTD Singapore Competitions -->
+            <div class="timeline">
+                <h4>CSTD Singapore Competitions</h4>
+                <p><strong>2016</strong></p>
+                <ul>
+                    <li>CSTD 18th Singapore Regional Comps Trios 15&Under</li>
+                    <li>CSTD 19th Singapore Regional Comps 12&Under Duo</li>
+                    <li>11&Under Solo Novice</li>
+                    <li>15&Under Jazz & Hip Hop Troupe – 2nd Placing</li>
+                    <li>15&Under Song & Dance Troupe – 1st Placing</li>
+                </ul>
+
+                <p><strong>2017</strong></p>
+                <ul>
+                    <li>CSTD 19th Singapore Regional Comps 12&Under Duo</li>
+                    <li>11&Under Solo Novice</li>
+                    <li>15&Under Jazz & Hip Hop Troupe – 2nd Placing</li>
+                    <li>15&Under Song & Dance Troupe – 1st Placing</li>
+                </ul>
+
+                <p><strong>2018</strong></p>
+                <ul>
+                    <li>CSTD Born To Perform Solo Competition</li>
+                    <li>Jazz Solo Novice 13&Under – 1st Placing</li>
+                    <li>Lyrical Solo Novice 13&Under – 2nd Placing</li>
+                    <li>CSTD Asia Pacific Dance Comps 13&Under Lyrical Troupe – 1st Placing</li>
+                    <li>13&Under Jazz Troupe – 1st Placing</li>
+                </ul>
+            </div>
+
+            <!-- PIANO TIMELINE -->
+            <div class="timeline">
+                <h3>Piano Achievements</h3>
+                <p><strong>Singapore and Salzburg, 2016</strong></p>
+                <ul>
+                    <li>1st Performance at Steinway Rising Stars at Steinway Gallery, Orchard (15th March)</li>
+                    <li>Performed at Bach In The Subways at The Fullerton, 6th Annual Celebration of J.S. Bach's 331st Birthday (19th March)</li>
+                    <li>Performed in Young Talent Concert at YST Conservatory of Music, National University of Singapore (28th May & 27th November)</li>
+                    <li>Performed solo and duet at Kawai Recital Hall (31st December)</li>
+                </ul>
+
+                <p><strong>Grand Prize Virtuoso International Music Comps (Salzburg, Austria)</strong></p>
+                <ul>
+                    <li>Junior Solo – 2nd Prize</li>
+                    <li>Chamber Music Group A Duet – 2nd Prize</li>
+                </ul>
+                <p><strong>22nd - 24th July 2016: Asian Art Festival at Resort World Sentosa</strong></p>
+                <ul>
+                    <li>Solo – Silver</li>
+                    <li>Duet – Silver</li>
+                </ul>
+
+                <p><strong>Singapore, Poland, and Kuala Lumpur, 2017</strong></p>
+                <ul>
+                    <li>Performed at Steinway Resonates with Rising Stars Series at Singapore National Gallery with Red Lang Lang Piano (25th February)</li>
+                    <li>Performed at Bach In The Subways at URA Centre (19th March)</li>
+                    <li>Performed at the XXI International Music Festival in Naleczow, Poland with the Lublin Philharmonic Orchestra (17th - 28th July)</li>
+                </ul>
+
+                <p><strong>American Protege International Music Talents Competition (Spring 2017)</strong></p>
+                <ul>
+                    <li>Performed at Weill Recital Hall, Carnegie Hall, New York, USA</li>
+                    <li>Solo and Duo – 2nd Prize</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

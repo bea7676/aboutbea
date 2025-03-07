@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background styles */
+        body {
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        /* General section styles */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .scroll-animation {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .scroll-animation.visible {
+            opacity: 1;
+        }
+
+        /* Timeline Section */
+        #timeline {
+            background: #222;
+            color: #fff;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .timeline-container li {
+            padding: 20px;
+            border-bottom: 2px solid #444;
+            position: relative;
+        }
+
+        .timeline-container li:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #00d2ff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-container li h3 {
+            color: #00d2ff;
+        }
+
+        /* Floating Shapes */
+        .floating-shape {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 30%;
+            left: 15%;
+        }
+
+        .floating-shape:nth-child(2) {
+            top: 60%;
+            left: 40%;
+        }
+
+        /* Animation for floating shapes */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Header Section */
+        #header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 80px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        #header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        #header p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #333;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        #skills h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        /* Adding more depth to the background */
+        .background-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('background-pattern.svg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #222;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="background-elements"></div>
+
+    <!-- Header Section -->
+    <section id="header" class="scroll-animation">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Discover my journey, skills, and achievements</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section scroll-animation">
+        <h2>Skills & Expertise</h2>
+        <ul>
+            <li>&#127916; Dance Performance <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div></li>
+            <li>&#9200; Time Management <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div></li>
+            <li>&#127929; Teamwork <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div></li>
+        </ul>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section scroll-animation">
+        <h2>Achievements</h2>
+        <div class="timeline">
+            <div>
+                <h3>2024</h3>
+                <p>Lead Dance Performance at National Arts Festival</p>
+            </div>
+            <div>
+                <h3>2023</h3>
+                <p>1st Place in Piano Solo Competition</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (At the bottom) -->
+    <section id="timeline">
+        <div class="timeline-container">
+            <h3>Timeline</h3>
+            <ul>
+                <li>
+                    <h3>2024</h3>
+                    <p>Lead Dance Performance at National Arts Festival</p>
+                </li>
+                <li>
+                    <h3>2023</h3>
+                    <p>1st Place in Piano Solo Competition</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: beatrice@example.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Beatrice's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Script for Scroll Animation -->
+    <script>
+        $(window).scroll(function() {
+            $(".scroll-animation").each(function() {
+                var position = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll + windowHeight > position + 100) {
+                    $(this).addClass("visible");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

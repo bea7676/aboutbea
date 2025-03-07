@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Embed with Footer Animation</title>
+    <style>
+        /* Style for the footer to make sure it takes full width */
+        footer {
+            position: relative;
+            height: 200px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Style for stars */
+        .star {
+            position: absolute;
+            color: gold;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Style for surprises */
+        .surprise {
+            position: absolute;
+            font-size: 24px;
+            color: #ff6347;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Instagram Embed Custom Styling */
+        .instagram-embed {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Instagram Post Embed -->
+    <div class="instagram-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DGVKF4kzngz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="12">
+            <a href="https://www.instagram.com/p/DGVKF4kzngz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Instagram Post</a>
+        </blockquote>
+        <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
+
+	
+
+    <!-- Instagram Post Embed -->
+    <div class="instagram-embed" style="max-width: 500px; margin: 20px auto;">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DGVKF4kzngz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="12">
+            <a href="https://www.instagram.com/p/DGVKF4kzngz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Instagram Post</a>
+        </blockquote>
+        <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
+
+    <!-- Footer with Animation -->
+    <footer onclick="addStar(event)" style="position: relative; height: 200px; background-color: #f8f8f8; border-top: 1px solid #ccc; text-align: center; line-height: 200px; font-size: 18px;">
+        Click anywhere on the footer for a surprise!
+    </footer>
+
+    <script>
+        // Add star to footer on click
+        function addStar(event) {
+            event.preventDefault(); // Prevent any default action
+
+            // Check if the click was inside the footer
+            if (event.target === event.currentTarget) {
+                showSurprise(event);
+            } else {
+                createStar(event);
+            }
+        }
+
+        // Function to create a star
+        function createStar(event) {
+            const star = document.createElement('span');
+            star.textContent = '?';  // Star symbol
+            star.style.position = 'absolute';
+            star.style.color = 'gold';
+            star.style.transition = 'transform 0.5s ease-in-out';
+
+            // Randomly adjust the size of the star
+            const starSize = Math.floor(Math.random() * (40 - 20 + 1)) + 20;
+            star.style.fontSize = `${starSize}px`;
+
+            // Set the position of the star based on the click event
+            star.style.left = `${event.clientX}px`;
+            star.style.top = `${event.clientY + window.scrollY}px`;
+
+            // Append the star to the footer
+            document.querySelector('footer').appendChild(star);
+
+            // Remove the star after 3 seconds
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+
+        // Function to show a surprise when clicking on the footer
+        function showSurprise(event) {
+            const surprises = ['??', '??', '??', '??', '?'];  // Array of surprise symbols
+            const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+
+            const surprise = document.createElement('span');
+            surprise.textContent = randomSurprise;
+            surprise.style.position = 'absolute';
+            surprise.style.fontSize = '24px';
+            surprise.style.color = '#ff6347';
+            surprise.style.transition = 'transform 0.5s ease-in-out';
+
+            // Set the position of the surprise based on the click event
+            surprise.style.left = `${event.clientX}px`;
+            surprise.style.top = `${event.clientY + window.scrollY}px`;
+
+            // Append the surprise to the footer
+            document.querySelector('footer').appendChild(surprise);
+
+            // Remove the surprise after 3 seconds
+            setTimeout(() => {
+                surprise.remove();
+            }, 3000);
+        }
+    </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <!-- Footer with Animation -->
+    <footer onclick="addStar(event)">
+        Click anywhere on the footer for a surprise!
+    </footer>
+
+    <script>
+        // Add star to footer on click
+        function addStar(event) {
+            event.preventDefault(); // Prevent any default action
+
+            // Check if the click was inside the footer
+            if (event.target === event.currentTarget) {
+                showSurprise(event);
+            } else {
+                createStar(event);
+            }
+        }
+
+        // Function to create a star
+        function createStar(event) {
+            const star = document.createElement('span');
+            star.textContent = '★';  // Star symbol
+            star.classList.add('star');
+
+            // Randomly adjust the size of the star
+            const starSize = Math.floor(Math.random() * (40 - 20 + 1)) + 20;
+            star.style.fontSize = `${starSize}px`;
+
+            // Set the position of the star based on the click event
+            star.style.left = `${event.clientX}px`;
+            star.style.top = `${event.clientY + window.scrollY}px`;
+
+            // Append the star to the footer
+            document.querySelector('footer').appendChild(star);
+
+            // Remove the star after 3 seconds
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+
+        // Function to show a surprise when clicking on the footer
+        function showSurprise(event) {
+            const surprises = ['🎁', '🎉', '🎈', '💖', '✨'];  // Array of surprise symbols
+            const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+
+            const surprise = document.createElement('span');
+            surprise.textContent = randomSurprise;
+            surprise.classList.add('surprise');
+
+            // Set the position of the surprise based on the click event
+            surprise.style.left = `${event.clientX}px`;
+            surprise.style.top = `${event.clientY + window.scrollY}px`;
+
+            // Append the surprise to the footer
+            document.querySelector('footer').appendChild(surprise);
+
+            // Remove the surprise after 3 seconds
+            setTimeout(() => {
+                surprise.remove();
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>

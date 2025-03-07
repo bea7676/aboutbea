@@ -1,0 +1,65 @@
+
+    <script>
+        $(document).ready(function() {
+            $(window).on('scroll', function() {
+                $('.scroll-animation').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $(this).addClass('visible');
+                    }
+                });
+            });
+        });
+    </script>
+	
+		$(document).ready(function () {
+            $(window).on('scroll', function () {
+                $('.scroll-animation').each(function () {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $(this).addClass('visible');
+                    }
+                });
+
+                // Show scroll-to-top button when near bottom
+                let lastSection = $('.scroll-animation').last();
+                if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+                    $('.scroll-to-top').fadeIn();
+                } else {
+                    $('.scroll-to-top').fadeOut();
+                }
+            });
+
+            // Smoothly scroll back to the top when the button is clicked
+            $('.scroll-to-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 1500, function () {
+                    $('.scroll-animation').removeClass('visible'); // Reset sections
+                });
+            });
+
+            $(window).trigger('scroll'); // Trigger on page load
+        });
+		
+		
+		
+	
+    <section id="timeline" class="section scroll-animation">
+        <h2 class="section-header">Timeline</h2>
+        <div class="container">
+            <div class="timeline-container">
+                <div class="timeline">
+                    <h3>2024 - CSTD Dance Competition</h3>
+                    <h4>First Place in Contemporary Dance</h4>
+                    <p>Performed with my team at the CSTD Dance Competition, where we secured first place in the contemporary category.</p>
+                </div>
+                <div class="timeline">
+                    <h3>2023 - Disneyland Dance Tour</h3>
+                    <h4>International Dance Exposure</h4>
+                    <p>Participated in a magical dance tour in Disneyland, enhancing my performance skills and cultural exposure.</p>
+                </div>
+                <div class="timeline">
+                    <h3>2022 - Piano Performance at Kawai Recital Hall</h3>
+                    <h4>Recital Debut</h4>
+                    <p>Played a solo piano piece for a small audience at the renowned Kawai Recital Hall, marking a significant milestone in my music journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>

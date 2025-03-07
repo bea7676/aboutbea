@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Footer with Surprises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            position: relative;
+            height: 300px; /* Adjust the height of the footer */
+            overflow: hidden; /* Prevent surprises from spilling outside */
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .star {
+            position: absolute;
+            font-size: 30px;
+            color: gold;
+            opacity: 0;
+            animation: star-animation 3s forwards;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        @keyframes star-animation {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        .surprise {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0;
+            animation: surprise-animation 3s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes surprise-animation {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <footer onclick="addStar(event)">
+        <div class="footer-content">
+            <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function addStar(event) {
+            event.preventDefault(); // Prevent any default action
+
+            // If the user clicks on the black space (footer), trigger a surprise effect
+            if (event.target === event.currentTarget) {
+                showSurprise(event);
+            } else {
+                createStar(event);
+            }
+        }
+
+        function createStar(event) {
+            // Create a new star element
+            const star = document.createElement('span');
+            star.textContent = '★';  // Star symbol
+            star.classList.add('star');
+
+            // Randomly adjust the size of the star
+            const starSize = Math.floor(Math.random() * (40 - 20 + 1)) + 20; // Random size between 20px and 40px
+            star.style.fontSize = `${starSize}px`;
+
+            // Set the position of the star based on the click event
+            star.style.left = `${event.clientX}px`;
+            star.style.top = `${event.clientY + window.scrollY}px`;
+
+            // Append the star to the footer
+            document.querySelector('footer').appendChild(star);
+
+            // Optional: Remove the star after 3 seconds
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+
+        function showSurprise(event) {
+            // Randomly pick a surprise symbol
+            const surprises = ['🎁', '🎉', '🎈', '💖', '✨'];  // Array of surprise symbols
+            const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+
+            // Create a new surprise element
+            const surprise = document.createElement('span');
+            surprise.textContent = randomSurprise;
+            surprise.classList.add('surprise');
+
+            // Set the position of the surprise based on the click event
+            surprise.style.left = `${event.clientX}px`;
+            surprise.style.top = `${event.clientY + window.scrollY}px`;
+
+            // Append the surprise to the footer
+            document.querySelector('footer').appendChild(surprise);
+
+            // Optional: Remove the surprise after 3 seconds
+            setTimeout(() => {
+                surprise.remove();
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
